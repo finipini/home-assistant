@@ -12,12 +12,10 @@ import voluptuous as vol
 from homeassistant.core import callback
 from homeassistant.const import ATTR_ENTITY_ID
 import homeassistant.helpers.config_validation as cv
-from homeassistant.helpers.dispatcher import (
-    dispatcher_send, async_dispatcher_connect)
-from homeassistant.helpers.entity_component import EntityComponent
+from homeassistant.helpers.dispatcher import dispatcher_send
 from .const import (SIGNAL_START_PAUSE_METER, SIGNAL_RESET_METER)
 
-_LOGGER =  logging.getLogger(__name__)
+_LOGGER = logging.getLogger(__name__)
 
 DOMAIN = 'utility_meter'
 
@@ -27,6 +25,7 @@ SERVICE_RESET = 'reset'
 SERVICE_METER_SCHEMA = vol.Schema({
     vol.Required(ATTR_ENTITY_ID): cv.entity_ids,
 })
+
 
 async def async_setup(hass, config):
     """Set up an Utility Meter."""

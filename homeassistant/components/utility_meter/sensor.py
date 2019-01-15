@@ -11,9 +11,9 @@ import voluptuous as vol
 
 import homeassistant.util.dt as dt_util
 import homeassistant.helpers.config_validation as cv
-from homeassistant.components.sensor import (DOMAIN, PLATFORM_SCHEMA)
+from homeassistant.components.sensor import PLATFORM_SCHEMA
 from homeassistant.const import (
-    CONF_NAME, ATTR_UNIT_OF_MEASUREMENT, ATTR_ENTITY_ID,
+    CONF_NAME, ATTR_UNIT_OF_MEASUREMENT,
     EVENT_HOMEASSISTANT_START, STATE_UNKNOWN, STATE_UNAVAILABLE)
 from homeassistant.core import callback
 from homeassistant.helpers.event import (
@@ -21,8 +21,9 @@ from homeassistant.helpers.event import (
 from homeassistant.helpers.dispatcher import (
     dispatcher_send, async_dispatcher_connect)
 from homeassistant.helpers.restore_state import RestoreEntity
-from .const import (SIGNAL_START_PAUSE_METER, SIGNAL_RESET_METER,
-    HOURLY, WEEKLY, MONTHLY, YEARLY, METER_TYPES)
+from .const import (
+    SIGNAL_START_PAUSE_METER, SIGNAL_RESET_METER,
+    HOURLY, DAILY, WEEKLY, MONTHLY, YEARLY, METER_TYPES)
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -50,6 +51,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
 PRECISION = 3
 PAUSED = "paused"
 COLLECTING = "collecting"
+
 
 async def async_setup_platform(hass, config, async_add_entities,
                                discovery_info=None):
