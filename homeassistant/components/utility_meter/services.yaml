@@ -1,0 +1,15 @@
+# Describes the format for available switch services
+
+reset:
+  description: Resets the counter of an utility meter.
+  fields:
+    entity_id:
+      description: Name(s) of entities to reset 
+      example: 'sensor.energy_meter'
+
+start_pause:
+  description: Starts or Pauses the counter of an utility meter.
+  fields:
+    entity_id:
+      description: Name(s) of entities to reset 
+      example: 'sensor.peak_energy_meter'
