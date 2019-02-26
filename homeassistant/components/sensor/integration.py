@@ -156,6 +156,7 @@ class IntegrationSensor(RestoreEntity):
             self.hass, self._sensor_source_id, calc_integration)
 
     async def async_update(self):
+        """Please ignore."""
         _LOGGER.error("Say what!?")
 
     @property
