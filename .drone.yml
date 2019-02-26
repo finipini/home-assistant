@@ -1,0 +1,10 @@
+kind: pipeline
+name: default
+
+steps:
+- name: py36
+  image: python:3.6
+  commands:
+    - pip install -r requirements_test_all.txt
+    - pip install tox
+    - tox -e py36
