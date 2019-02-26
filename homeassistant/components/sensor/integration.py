@@ -155,6 +155,9 @@ class IntegrationSensor(RestoreEntity):
         async_track_state_change(
             self.hass, self._sensor_source_id, calc_integration)
 
+    async def async_update(self):
+        _LOGGER.error("Say what!?")
+
     @property
     def name(self):
         """Return the name of the sensor."""
