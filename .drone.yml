@@ -1,8 +1,30 @@
 kind: pipeline
-name: default
+name: lint 
 
 steps:
-- name: py36
+- name: lint 
+  image: python:3.5
+  commands:
+    - pip install -r requirements_test_all.txt
+    - pip install tox
+    - tox -e lint 
+---
+kind: pipeline
+name: pylint 
+
+steps:
+- name: pylint 
+  image: python:3.5
+  commands:
+    - pip install -r requirements_test_all.txt
+    - pip install tox
+    - tox -e pylint 
+---
+kind: pipeline
+name: python3-6-tox 
+
+steps:
+- name: tox36 
   image: python:3.6
   commands:
     - pip install -r requirements_test_all.txt
