@@ -621,6 +621,9 @@ pyspcwebgw==0.4.0
 # homeassistant.components.ecobee
 python-ecobee-api==0.2.5
 
+# homeassistant.components.erse
+python-electricity==0.0.4
+
 # homeassistant.components.darksky
 python-forecastio==1.4.0
 
