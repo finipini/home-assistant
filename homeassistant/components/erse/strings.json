@@ -1,0 +1,20 @@
+{
+  "config": {
+    "title": "Entidade Reguladora dos Servi\u00e7os Energ\u00e9ticos",
+    "step": {
+      "user": {
+        "title": "Setup your Operator and plan",
+        "data": {
+          "operator": "Operator",
+          "plan": "Plan",
+          "source": "Energy Sensor"
+        }
+      }
+    },
+    "error": {
+      "invalid_operator": "We cannot find such operator in our database",
+      "invalid_plan": "We cannot find such plan.",
+      "unknown": "Unexpected error"
+    }
+  }
+}
